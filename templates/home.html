@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Home</title>
+    {% if title %}
+        <title>Factory Berlin - {{ title }}</title>
+    {% else %}
+        <title>Factory Berlin</title>
 </head>
 <body>
-    <h1>Home Page</h1>
+    {% for room in rooms %}
+        <h1>{{ room.name }} - {{ room.number }}</h1>
+        <p>{{ room.equipment }}</p>
+    {% endfor %}
 </body>
 </html>
