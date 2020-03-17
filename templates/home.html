@@ -1,16 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-    {% if title %}
-        <title>Factory Berlin - {{ title }}</title>
-    {% else %}
-        <title>Factory Berlin</title>
-    {% endif %}
-</head>
-<body>
+{% extends "layout.html" %}
+{% block content %}
     {% for room in rooms %}
         <h1>{{ room.name }} - {{ room.number }}</h1>
         <p>{{ room.equipment }}</p>
     {% endfor %}
-</body>
-</html>
+{% endblock content %}
