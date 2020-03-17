@@ -1,11 +1,14 @@
-from flask import Flask, escape, request
-
+from flask import Flask
 app = Flask(__name__)
 
-@app.route('/')
-def hello():
-    name = request.args.get("name", "World")
-    return f'Hello, {escape(name)}!'
+@app.route("/")
+@app.route("/home")
+def home():
+    return "<h1>Home Page</h1>"
 
-if __name__ == "__main__":
+@app.route("/login")
+def about():
+    return "<h1>Login</h1>"
+
+if __name__ == '__main__':
     app.run(debug=True)
