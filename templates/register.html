@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div>
+        <form action="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset>
+                <legend>Create Your Factory Account</legend>
+
+                <div class="csstag">
+                    {{ form.username.label(class="csstag") }}
+                
+                    {% if form.username.errors %}
+                        {{ form.username(class="csstag") }}
+                        <div class="csstag">
+                            {% for error in form.username.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.username(class="csstag") }}
+                    {% endif %}
+                </div>
+
+                <div class="csstag">
+                    {{ form.email.label(class="csstag") }}
+                
+                    {% if form.email.errors %}
+                        {{ form.email(class="csstag") }}
+                        <div class="csstag">
+                            {% for error in form.email.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.email(class="csstag") }}
+                    {% endif %}
+                </div>
+
+                <div class="csstag">
+                    {{ form.password.label(class="csstag") }}
+                
+                    {% if form.password.errors %}
+                        {{ form.password(class="csstag") }}
+                        <div class="csstag">
+                            {% for error in form.password.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.password(class="csstag") }}
+                    {% endif %}
+                </div>
+
+                <div class="csstag">
+                    {{ form.confirm_password.label(class="csstag") }}
+                
+                    {% if form.confirm_password.errors %}
+                        {{ form.confirm_password(class="csstag") }}
+                        <div class="csstag">
+                            {% for error in form.confirm_password.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.confirm_password(class="csstag") }}
+                    {% endif %}
+                </div>
+            </fieldset>
+
+            <div>
+                {{ form.submit(class="css") }}
+            </div>
+
+        </form>
+    </div>
+
+    <div>
+        <small>
+            Do you already have an account? <a href="{{ url_for("login") }}">Log In</a>
+        </small>
+    </div>
+{% endblock content %}
