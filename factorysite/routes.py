@@ -23,6 +23,7 @@ rooms = [
 
 @app.route("/")
 @app.route("/home")
+@app.route("/index")
 def home():
     return render_template("home.html", rooms=rooms)
 
