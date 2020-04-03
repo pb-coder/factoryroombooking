@@ -10,6 +10,7 @@ class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(25), unique=True, nullable=False)
     email = db.Column(db.String(150), unique=True, nullable=False)
+    password = db.Column(db.String(60), nullable=False)
     image_file = db.Column(db.String(20), nullable=False, default="default.jpg")
 
     def __repr__(self):
@@ -32,4 +33,4 @@ class Room(db.Model):
     equipment_id= db.Column(db.Integer, db.ForeignKey('equipment.id'))
 
     def __repr__(self):
-        return f"Room('{self.name}', '{self.is_booked}')"    
+        return f"Room('{self.name}', '{self.is_booked}')"
