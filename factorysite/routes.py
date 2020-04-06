@@ -20,6 +20,48 @@ data = [
         "equipment" : "TV",
     },
 
+        {
+        "name" : "HTML",
+        "number" : "3.10.7",
+        "capacity" : "10 People",
+        "equipment" : "TV + ChromeCast",
+    },
+
+    {
+        "name" : "Swift",
+        "number" : "3.10.8",
+        "capacity" : "15 People",
+        "equipment" : "TV",
+    },
+
+        {
+        "name" : "HTML",
+        "number" : "3.10.7",
+        "capacity" : "10 People",
+        "equipment" : "TV + ChromeCast",
+    },
+
+    {
+        "name" : "Swift",
+        "number" : "3.10.8",
+        "capacity" : "15 People",
+        "equipment" : "TV",
+    },
+
+        {
+        "name" : "HTML",
+        "number" : "3.10.7",
+        "capacity" : "10 People",
+        "equipment" : "TV + ChromeCast",
+    },
+
+    {
+        "name" : "Swift",
+        "number" : "3.10.8",
+        "capacity" : "15 People",
+        "equipment" : "TV",
+    },
+
 ]
 
 @app.route("/")
@@ -60,7 +102,7 @@ def login():
         user = User.query.filter_by(email=form.email.data).first()
         if user and bcrypt.check_password_hash(user.password, form.password.data):
             login_user(user, remember=form.remember.data)
-            next_page = requests.args.get("next")
+            next_page = request.args.get("next")
             return redirect(next_page) if next_page else redirect(url_for("home"))
         else:
             flash("Login Unsuccessful. Please check email and password", "csstag")

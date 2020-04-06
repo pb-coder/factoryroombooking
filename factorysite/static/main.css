@@ -72,20 +72,69 @@ label {
 
 /* cards */
 
-.room_card {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  border-radius: 2.5px;
-  transition: 0.3s;
-  height: 30%;
-  width: 30%;
-  margin: 3%;
+.wrapper {
+  margin: 5%;
+  display: grid;
+  grid-template-columns: 22% 22% 22% 22%;
+  grid-gap: 2%;
+  background-color: #fff;
+  color: #444;
 }
 
-.room_card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+@media (max-width: 599px) {
+  .wrapper {
+    margin: 5%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-gap: 2%;
+    background-color: #fff;
+    color: #444;
+  }
+}
+
+@media (min-width: 600px) {
+  .wrapper {
+    margin: 5%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-gap: 2%;
+    background-color: #fff;
+    color: #444;
+  }
+}
+
+@media (min-width: 900px) {
+  .wrapper {
+    margin: 5%;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-gap: 2%;
+    background-color: #fff;
+    color: #444;
+  }
+}
+
+@media (min-width: 1200px) {
+  .wrapper {
+    margin: 5%;
+    display: grid;
+    grid-template-columns: 23% 23% 23% 23%;
+    grid-gap: 2%;
+    background-color: #fff;
+    color: #444;
+  }
+}
+
+.box {
+  background-color: #444;
+  color: #fff;
+  border-radius: 5px;
+  padding: 3%;
+  font-size: 1rem;
 }
 
 .room_name {
+  text-align: center;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-style: italic;
@@ -100,4 +149,17 @@ label {
   background-color: #CFEC1F;
   color: #212121;
   text-align: center;
+}
+
+.room_card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 2.5px;
+  transition: 0.3s;
+  height: 30%;
+  width: 30%;
+  margin: 3%;
+}
+
+.room_card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
