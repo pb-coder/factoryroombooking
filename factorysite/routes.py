@@ -7,66 +7,6 @@ from factorysite.forms import RegistrationForm, LoginForm, UpdateAccountForm
 from factorysite.models import User, Equipment, Room
 from flask_login import login_user, current_user, logout_user, login_required
 
-data = [
-
-    {
-        "name" : "HTML",
-        "number" : "3.10.7",
-        "capacity" : "10 People",
-        "equipment" : "TV + ChromeCast",
-    },
-
-    {
-        "name" : "Swift",
-        "number" : "3.10.8",
-        "capacity" : "15 People",
-        "equipment" : "TV",
-    },
-
-        {
-        "name" : "HTML",
-        "number" : "3.10.7",
-        "capacity" : "10 People",
-        "equipment" : "TV + ChromeCast",
-    },
-
-    {
-        "name" : "Swift",
-        "number" : "3.10.8",
-        "capacity" : "15 People",
-        "equipment" : "TV",
-    },
-
-        {
-        "name" : "HTML",
-        "number" : "3.10.7",
-        "capacity" : "10 People",
-        "equipment" : "TV + ChromeCast",
-    },
-
-    {
-        "name" : "Swift",
-        "number" : "3.10.8",
-        "capacity" : "15 People",
-        "equipment" : "TV",
-    },
-
-        {
-        "name" : "HTML",
-        "number" : "3.10.7",
-        "capacity" : "10 People",
-        "equipment" : "TV + ChromeCast",
-    },
-
-    {
-        "name" : "Swift",
-        "number" : "3.10.8",
-        "capacity" : "15 People",
-        "equipment" : "TV",
-    },
-
-]
-
 @app.route("/")
 @app.route("/home")
 @app.route("/index")
@@ -80,6 +20,7 @@ def about():
 @app.route("/rooms")
 @login_required
 def rooms():
+    data = Room.query.all()
     return render_template("rooms.html", rooms=data, title="Rooms")
 
 @app.route("/register", methods=["GET", "POST"])
@@ -92,7 +33,7 @@ def register():
         user = User(username=form.username.data, email=form.email.data, password=hashed_password)
         db.session.add(user)
         db.session.commit()
-        flash("Your account has been created! You are now able to log in", "csstag")
+        flash("Your account has been created!", "csstag")
         return redirect(url_for("login"))
     return render_template("register.html", title="Register", form=form)
 
