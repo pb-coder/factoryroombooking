@@ -12,6 +12,26 @@
     {% endif %}
 </head>
 
+<section>
+  <div class="head">
+      <div class="columns is-marginless heading has-text-weight-bold">
+          <div class="column center">
+              <figure class="navbar-item image">
+                  <a class="factory-logo" href="{{ url_for("home") }}"><img src="static/logo.svg"></a>
+              </figure>
+              <a href="{{ url_for("rooms") }}" class="navbar-item has-text-black">ROOMS</a>
+              {% if current_user.is_authenticated %}
+                <a href="{{ url_for("account") }}" class="navbar-item has-text-black">ACCOUNT</a>
+                <a href="{{ url_for("logout") }}" class="navbar-item has-text-black">LOG OUT</a>
+              {% else %}
+                  <a href="{{ url_for("login") }}" class="navbar-item has-text-black">LOG IN</a>
+                  <a href="{{ url_for("register") }}" class="navbar-item has-text-black">REGISTER</a>
+              {% endif %}
+          </div>
+      </div>
+  </div>
+</section>
+
 <body>
   <div>
     {% with messages = get_flashed_messages(with_categories=true) %}
