@@ -1,16 +1,24 @@
 {% extends "layout.html" %}
 {% block content %}
-    <div class="wrapper">
-        {% for room in rooms %}
-            <div class="box">
-                <h4 class="room_name">{{ room.name }} • {{ room.number }}</h4>
-                <ul class="room_list">
-                    <i class="material-icons">watch_later</i><i class="room_clock">Clock</i><br>
-                    <i class="material-icons">people_outline</i><i class="room_people">10 People</i><br>
-                    <i class="material-icons">cloud</i><i class="room_equipment">{{ room.equipment.text }}</i><br>        
-                </ul>
-                <button class="room_book">Book</button>
-            </div>
-        {% endfor %}
+    <div class="container">
+        <div class="wrapper">
+            {% for room in rooms %}
+                <div class="column">
+                    <div class="card">
+                        <div class="card-content">
+                            <h1 class="title has-text-centered room-name">{{ room.name }}</h1>
+                            <h4 class="subtitle has-text-centered room-number">{{ room.number }}</h4>
+                            <h5>{{ room.capacity }} People</h5>
+                            <h5>{{ room.equipment.text }}</h5>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-footer-item">
+                                <button class="button is-primary is-outlined">Book Room</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
     </div>
 {% endblock content %}

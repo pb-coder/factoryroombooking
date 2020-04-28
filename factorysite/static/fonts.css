@@ -1,0 +1,17 @@
+/* oswald-200 - latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 200;
+  src: local(''),
+       url('/fonts/oswald-v31-latin-200.woff2') format('woff2');
+}
+
+/* oswald-regular - latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+       url('/fonts/oswald-v31-latin-regular.woff2') format('woff2');
+}

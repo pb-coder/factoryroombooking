@@ -1,0 +1,38 @@
+#form-card {
+  margin-top: 2%;
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#form-text {
+  margin-top: 1.5mm;
+}
+
+#form-button {
+  margin-top: 3.5mm;
+}
+
+@media only screen and (max-width: 600px) {
+  #form-card {
+    width: 70%;
+  }
+}
+
+@media (min-width: 600px) {
+  #form-card {
+    width: 55%;
+  }
+}
+
+@media (min-width: 900px) {
+  #form-card {
+    width: 45%;
+  }
+}
+
+@media (min-width: 1200px) {
+  #form-card {
+    width: 30%;
+  }
+}

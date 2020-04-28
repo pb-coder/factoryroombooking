@@ -1,0 +1,36 @@
+.room-name{
+  font-family: 'Oswald';
+}
+
+.wrapper {
+  margin: 5%;
+  display: grid;
+  grid-template-columns: 22% 22% 22% 22%;
+  grid-gap: 2%;
+  background-color: #fff;
+  color: #444;
+}
+
+@media (max-width: 599px) {
+  .wrapper {
+    grid-template-columns: 100%;
+  }
+}
+
+@media (min-width: 600px) {
+  .wrapper {
+    grid-template-columns: 50% 50%;
+  }
+}
+
+@media (min-width: 900px) {
+  .wrapper {
+    grid-template-columns: 33% 33% 33%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .wrapper {
+    grid-template-columns: 23% 23% 23% 23%;
+  }
+}

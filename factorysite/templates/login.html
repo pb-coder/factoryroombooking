@@ -1,59 +1,59 @@
 {% extends "layout.html" %}
 {% block content %}
-    <div>
-        <form method="POST" action="">
-            {{ form.hidden_tag() }}
-            <fieldset>
-                <legend>Log In</legend>
+    <div class="container">
+        <div class="card" id="form-card">
+            <div class="card-content login">
+                <form method="POST" action="">
+                    {{ form.hidden_tag() }}
+                    <fieldset>
+                        <p class="title has-text-centered">Log In</p>
 
-                <div class="csstag">
-                    {{ form.email.label(class="csstag") }}
-                
-                    {% if form.email.errors %}
-                        {{ form.email(class="csstag") }}
-                        <div class="csstag">
-                            {% for error in form.email.errors %}
-                                <span>{{ error }}</span>
-                            {% endfor %}
+                        <div class="field">
+                            {{ form.email.label(class="label") }}
+                                <div class="control">
+                                {% if form.email.errors %}
+                                    {{ form.email(class="input is-danger") }}
+                                    <div class="help is-danger">
+                                        {% for error in form.email.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form.email(class="input") }}
+                                {% endif %}
+                            </div>
                         </div>
-                    {% else %}
-                        {{ form.email(class="csstag") }}
-                    {% endif %}
-                </div>
 
-                <div class="csstag">
-                    {{ form.password.label(class="csstag") }}
-                
-                    {% if form.password.errors %}
-                        {{ form.password(class="csstag") }}
-                        <div class="csstag">
-                            {% for error in form.password.errors %}
-                                <span>{{ error }}</span>
-                            {% endfor %}
+                        <div class="field">
+                            {{ form.password.label(class="label") }}
+                                <div class="control">
+                                {% if form.password.errors %}
+                                    {{ form.password(class="input is-danger") }}
+                                    <div class="help is-danger">
+                                        {% for error in form.password.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form.password(class="input") }}
+                                {% endif %}
+                            </div>
                         </div>
-                    {% else %}
-                        {{ form.password(class="csstag") }}
-                    {% endif %}
-                </div>
 
-                </div>
-                <div class="csstag">
-                    {{ form.remember(class="form-check-input") }}
-                    {{ form.remember.label(class="form-check-label") }}
-                </div>
+                    <div class="field">
+                        <div class="control" id="form-button">
+                            {{ form.submit(class="button is-link") }}
+                        </div>
+                    </div>
 
-            </fieldset>
+                </form>
 
-            <div>
-                {{ form.submit(class="csstag") }}
+                <div>
+                    <h6 id="form-text">
+                        Not a member yet? <a href="{{ url_for("register") }}">Create an account</a>
+                    </h6>
+                </div>
             </div>
-
-        </form>
-    </div>
-
-    <div>
-        <small>
-            Don't have an account yet? <a href="{{ url_for("register") }}">Create One Here</a>
-        </small>
+        </div>
     </div>
 {% endblock content %}
