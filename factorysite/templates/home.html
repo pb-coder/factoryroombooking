@@ -1,4 +1,50 @@
 {% extends "layout.html" %}
 {% block content %}
-    <h1>Home Page</h1>
+<section class="hero is-fullheight">
+    <div class="hero-head">
+        <div class="columns is-marginless heading has-text-weight-bold">
+            <div class="column center">
+                <figure class="navbar-item image">
+                    <img src="static/logo.svg" style="width: 6.25rem; height: 1rem;">
+                </figure>
+                <a href="{{ url_for("rooms") }}" class="navbar-item has-text-black">ROOMS</a>
+                {% if current_user.is_authenticated %}
+                    <a href="{{ url_for("logout") }}" class="navbar-item has-text-black">LOG OUT</a>
+                {% else %}
+                    <a href="{{ url_for("login") }}" class="navbar-item has-text-black">LOG IN</a>
+                    <a href="{{ url_for("register") }}" class="navbar-item has-text-black">REGISTER</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <header class="hero-body">
+        <div class="is-overlay has-text-centered" style="top: 82px;">
+            <h2 class="title is-1 has-text-black">The family of innovators</h2>
+        </div>
+    </header>
+    
+    <footer class="hero-foot center home-footer">
+        <div class="home-grid">
+            <div id="text" class="center-column">
+                <p class="has-text-centered has-text-white">
+                    It's the family that turns <br>
+                    imaginary ideas into reality.
+                </p>
+            </div>
+            <div id="members" class="center-column">
+                <p class="title has-text-white">+5K</p>
+                <p class="subtitle has-text-white is-7">Member</p>
+            </div>
+            <div id="startups" class="home-footer-border center-column">
+                <p class="title has-text-white">+30</p>
+                <p class="subtitle has-text-white is-7">Startup</p>
+            </div>
+            <div id="students" class="home-footer-border center-column">
+                <p class="title has-text-white">+300</p>
+                <p class="subtitle has-text-white is-7">CODE Student</p>
+            </div>
+        </div>
+    </footer>
+</section>
 {% endblock content %}

@@ -9,28 +9,20 @@
   grid-gap: 2%;
   background-color: #fff;
   color: #444;
-}
 
-@media (max-width: 599px) {
-  .wrapper {
+  @media (max-width: 599px) {
     grid-template-columns: 100%;
   }
-}
 
-@media (min-width: 600px) {
-  .wrapper {
+  @media (min-width: 600px) {
     grid-template-columns: 50% 50%;
   }
-}
 
-@media (min-width: 900px) {
-  .wrapper {
+  @media (min-width: 900px) {
     grid-template-columns: 33% 33% 33%;
   }
-}
 
-@media (min-width: 1200px) {
-  .wrapper {
+  @media (min-width: 1200px) {
     grid-template-columns: 23% 23% 23% 23%;
   }
 }

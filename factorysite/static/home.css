@@ -1,0 +1,44 @@
+.hero{
+    background: black url('home-background.jpg') center / cover;
+}
+
+.center, .center-column {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.center-column {
+    flex-direction: column;
+}
+
+#text { grid-area: a; }
+#members { grid-area: b; }
+#startups { grid-area: c; }
+#students { grid-area: d; }
+
+.home-grid {
+    display: grid;
+    width: 768px;
+    grid-template-areas:
+        "a a a"
+        "b c d";
+
+    grid-row-gap: 1rem;
+}
+
+@media (max-width: 512px) {
+    #grid {
+        grid-template-areas:
+            "a a a"
+            "b c d";
+    }
+}
+
+.home-footer {
+    padding: 2rem;
+}
+
+.home-footer-border {
+    border-left: 1px solid gray;
+}

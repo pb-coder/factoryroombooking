@@ -13,35 +13,17 @@
 </head>
 
 <body>
-  <!--<nav>
-    <label for="toggle">&#9776;</label>
-    <input type="checkbox" id="toggle">
-    <div class="menu">
-      <a href="{{ url_for("home") }}">Home</a>
-      <a href="{{ url_for("rooms") }}">Rooms</a>
-      <a href="{{ url_for("about") }}">About Us</a>
-      {% if current_user.is_authenticated %}
-        <a href="{{ url_for("account") }}">Account</a>
-        <a href="{{ url_for("logout") }}">Logout</a>
-      {% else %}
-      <a href="{{ url_for("login") }}">Login</a>
-      <a href="{{ url_for("register") }}" class="active" >Register</a>
-      {% endif %}
-    </div>
-  </nav>-->
-
-    <div>
-      {% with messages = get_flashed_messages(with_categories=true) %}
-      {% if messages %}
-        {% for category, message in messages %}
-          <div class="{{ category }}">
-            {{ message }}
-          </div>
-        {% endfor %}
-      {% endif %}
-    {% endwith %}
-    {% block content %}{% endblock %}
-    </div>
-
+  <div>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category, message in messages %}
+        <div class="{{ category }}">
+          {{ message }}
+        </div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+  {% block content %}{% endblock %}
+  </div>
 </body>
 </html>
