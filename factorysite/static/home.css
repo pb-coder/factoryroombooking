@@ -1,3 +1,9 @@
+.message {
+    text-align: center;
+    background: black;
+    color: white;
+}
+
 .hero{
     background: black url('home-background.jpg') center / cover;
 }
