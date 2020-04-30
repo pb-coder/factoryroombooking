@@ -8,11 +8,6 @@
     background: black url('home-background.jpg') center / cover;
 }
 
-.factory-logo {
-    width: 6.25rem;
-    height: 1rem
-}
-
 .center, .center-column {
 	display: flex;
 	justify-content: center;
@@ -30,7 +25,7 @@
 
 .home-grid {
     display: grid;
-    width: 768px;
+    width: 60%;
     grid-template-areas:
         "a a a"
         "b c d";
