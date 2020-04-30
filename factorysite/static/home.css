@@ -8,6 +8,10 @@
     background: black url('home-background.jpg') center / cover;
 }
 
+#home-hero-text {
+    top: 20%;
+}
+
 .center, .center-column {
 	display: flex;
 	justify-content: center;
